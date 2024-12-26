@@ -15,10 +15,10 @@ const Nav = () => {
                     height={29} />
             </a>
 
-            <ul className={`flex flex-1 justify-center items-center gap-16 max-lg:flex-col max-lg:absolute max-lg:top-6 max-lg:right-0 max-lg:bg-white max-lg:shadow-lg max-lg:w-full max-lg:h-96 max-lg:z-15 ${expanded ? 'max-lg:block' :'max-lg:hidden'}`}>
+            <ul className={`flex flex-1 justify-center items-center gap-16 max-lg:flex-col max-lg:absolute max-lg:top-[26px] max-lg:right-[0px] max-lg:bg-white max-lg:shadow-xl max-lg:w-full max-lg:h-96 max-lg:z-15 ${expanded ? 'max-lg:block max-lg:rounded-md' :'max-lg:hidden'} transition-all ease-in-out`}>
                 {navLinks.map((item)=>{
                     return(
-                        <li key={item.label} className={`hover:scale-105 max-lg:z-15 ${expanded ? 'flex justify-center mt-10 ' :''} `} onClick={()=>{
+                        <li key={item.label} className={`hover:scale-105 max-lg:z-15 ${expanded ? 'flex justify-center mt-12 ' :''}  transition-all ease-in-out `} onClick={()=>{
                             if(!expanded){setExpanded(true)}
                             else{setExpanded(false)}
                         }}>
@@ -32,11 +32,11 @@ const Nav = () => {
 
           
 
-            <div className="hidden max-lg:block">
+            <div className={`hidden max-lg:block`}>
                 <img src={hamburger} alt="hamburger-menu" width={25} height={25}   onClick={()=>{
                     if(!expanded){setExpanded(true)}
                     else{setExpanded(false)}
-                }} />
+                }}  />
             </div>
         </nav>
     </header>
